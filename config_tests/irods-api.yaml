@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: irods-http-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: irods-http-api
+  template:
+    metadata:
+      labels:
+        app: irods-http-api
+    spec:
+      containers:
+      - name: irods-http-api
+        image: irods-http-api-runner
+        ports:
+        - containerPort: 9000
+

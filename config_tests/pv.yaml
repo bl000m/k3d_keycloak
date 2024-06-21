@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: keycloak-pv
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /home/fits/keycloak/certs
+    server: 134.158.228.1
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: nfs-csi

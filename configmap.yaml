@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-keys
+  namespace: keycloak
+data:
+  POSTGRES_DB: fits_keycloak
+  POSTGRES_USER: fits_keycloak
+  KEYCLOAK_ADMIN: admin
+  POSTGRES_HOST: ccpgsqlintra.in2p3.fr
+  KC_DB: postgres
+  KC_DB_URL_PORT: "6565"
+  KC_DB_SCHEMA: public
+  KC_PROXY: edge
+  KC_HTTPS_PORT: "8443"
+  KC_HTTPS_PROTOCOLS: TLSv1.3,TLSv1.2
+  SSL_PUBLIC: /opt/keycloak/demo/certs/ssl_certificate_from_CA.pem 
+  PRIVATE_KEY: /opt/keycloak/demo/certs/ssl_certificate_private.key
+
